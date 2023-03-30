@@ -27,8 +27,30 @@ class UserSeeder extends Seeder
                 'remember_token' => Str::random(10)
             ]
         ]);
+        \App\Models\User::insert([
+            [
+                'name' => 'ogur  ',
+                'email' => 'ogur.uyanik@gmail.com',
+                'email_verified_at' => now(),
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'gender' => 'male',
+                'active' => 1,
+                'remember_token' => Str::random(10)
+            ]
+        ]);
+        \App\Models\User::insert([
+            [
+                'name' => 'sidar  ',
+                'email' => 'sidarduygu81@gmail.com',
+                'email_verified_at' => now(),
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'gender' => 'male',
+                'active' => 1,
+                'remember_token' => Str::random(10)
+            ]
+        ]);
 
         // Fake users
-        User::factory()->times(9)->create();
+        //User::factory()->times(9)->create();
     }
 }

@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ColorSchemeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,15 +30,15 @@ Route::controller(AuthController::class)->middleware('loggedin')->group(function
 
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::controller(PageController::class)->group(function() {
-        Route::get('/', 'dashboardOverview1')->name('dashboard-overview-1');
-        Route::get('dashboard-overview-2-page', 'dashboardOverview2')->name('dashboard-overview-2');
-        Route::get('dashboard-overview-3-page', 'dashboardOverview3')->name('dashboard-overview-3');
-        Route::get('inbox-page', 'inbox')->name('inbox');
+    Route::resource('post',PostController::class);
+
+    Route::controller(DashboardController::class)->group(function() {
+        Route::get('/', 'dashboardOverview1')->name('dashboard');
         Route::get('file-manager-page', 'fileManager')->name('file-manager');
         Route::get('point-of-sale-page', 'pointOfSale')->name('point-of-sale');
         Route::get('chat-page', 'chat')->name('chat');
         Route::get('post-page', 'post')->name('post');
+        Route::get('page-page', 'page')->name('page');
         Route::get('calendar-page', 'calendar')->name('calendar');
         Route::get('crud-data-list-page', 'crudDataList')->name('crud-data-list');
         Route::get('crud-form-page', 'crudForm')->name('crud-form');

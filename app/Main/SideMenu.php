@@ -16,70 +16,10 @@ class SideMenu
             'dashboard' => [
                 'icon' => 'home',
                 'title' => 'Dashboard',
-                'sub_menu' => [
-                    'dashboard-overview-1' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-1',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
-                        'title' => 'Overview 1'
-                    ],
-                    'dashboard-overview-2' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-2',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
-                        'title' => 'Overview 2'
-                    ],
-                    'dashboard-overview-3' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-3',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
-                        'title' => 'Overview 3'
-                    ]
-                ]
-            ],
-            'menu-layout' => [
-                'icon' => 'box',
-                'title' => 'Menu Layout',
-                'sub_menu' => [
-                    'side-menu' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-1',
-                        'params' => [
-                            'layout' => 'side-menu'
-                        ],
-                        'title' => 'Side Menu'
-                    ],
-                    'simple-menu' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-1',
-                        'params' => [
-                            'layout' => 'simple-menu'
-                        ],
-                        'title' => 'Simple Menu'
-                    ],
-                    'top-menu' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-1',
-                        'params' => [
-                            'layout' => 'top-menu'
-                        ],
-                        'title' => 'Top Menu'
-                    ]
-                ]
-            ],
-            'inbox' => [
-                'icon' => 'inbox',
-                'route_name' => 'inbox',
+                'route_name' => 'dashboard',
                 'params' => [
                     'layout' => 'side-menu'
                 ],
-                'title' => 'Inbox'
             ],
             'file-manager' => [
                 'icon' => 'hard-drive',
@@ -97,21 +37,36 @@ class SideMenu
                 ],
                 'title' => 'Point of Sale'
             ],
-            'chat' => [
-                'icon' => 'message-square',
-                'route_name' => 'chat',
+            // 'chat' => [
+            //     'icon' => 'message-square',
+            //     'route_name' => 'chat',
+            //     'params' => [
+            //         'layout' => 'side-menu'
+            //     ],
+            //     'title' => 'Chat'
+            // ],
+            'page' => [
+                'icon' => 'file-text',
+                'route_name' => 'page',
                 'params' => [
                     'layout' => 'side-menu'
                 ],
-                'title' => 'Chat'
+                'title' => 'Page'
             ],
             'post' => [
                 'icon' => 'file-text',
-                'route_name' => 'post',
-                'params' => [
-                    'layout' => 'side-menu'
-                ],
-                'title' => 'Post'
+                'route_name' => 'post.index',
+                'title' => 'Post',
+                'sub_menu' => [
+                    'create' => [
+                        'icon' => '',
+                        'route_name' => 'post.create',
+                        'params' => [
+                            'layout' => 'side-menu'
+                        ],
+                        'title' => 'Create Post'
+                    ]
+                ]
             ],
             'calendar' => [
                 'icon' => 'calendar',
